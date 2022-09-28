@@ -2,6 +2,9 @@ package dad.maven.gson.GsonSample;
 
 import java.util.Scanner;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 /**
  * Hello world!
  *
@@ -34,7 +37,10 @@ public class App
         }
         //Crear el objeto persona y almacenar los datos
         Persona p = new Persona(name, subname, age2);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(p);
         //Mostrar los datos de p
-        System.out.println(p);
+        System.out.println(json);
+        
     }
 }
